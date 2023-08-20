@@ -13,6 +13,12 @@ img {
 .grid-container {
     border: 1px solid blue;
     max-width: 900px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 1fr 1fr 1fr */
+    justify-items: center;
+    grid-template-rows: repeat(3, 300px);
+    align-items: center;
 }
 
 .box {
@@ -22,6 +28,7 @@ img {
     color: white;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .box1 {
@@ -30,10 +37,17 @@ img {
 
 .box2 {
     background-color: yellow;
+    /* justify-self: end;
+    align-self: start; */
+    /* grid-column: 2 / 4; */
+    grid-row: 1 / 3;
+    height: 100%;
 }
 
 .box3 {
     background-color: lightgreen;
+    /* justify-self: start;
+    align-self: end; */
 }
 
 .box4 {
@@ -86,7 +100,4 @@ img {
 .product-info {
     display: flex;
     justify-content: space-between;
-}
-
-.product-container {
 }
