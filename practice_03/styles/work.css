@@ -30,6 +30,8 @@ img {
 .header {
     padding: 10px;
     box-shadow: 0 0 10px 0 lightblue;
+    display: flex;
+    justify-content: space-between;
 }
 
 /** Стили для навигации в заголовке */
@@ -38,6 +40,7 @@ img {
     cursor: pointer;
     gap: 60px;
     padding: 10px;
+    display: flex;
 }
 
 .navigation-item {
@@ -54,9 +57,44 @@ img {
     display: none;
 }
 
+.contacts-button {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+}
+
+/* Desktop-first approach */
 .product-container {
     padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
+
+@media screen and (max-width: 700px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .navigation-list {
+        gap: 15px;
+    }
+    .navigation-item {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+    .burger-menu-button {
+        display: block;
+    }
+    .navigation-menu {
+        display: none;
+    }
+}
+
+
 
 .product-card {
     border-radius: 10px;

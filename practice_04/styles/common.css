@@ -1,0 +1,23 @@
+/*
+* Здесь содержатся стили, не имеющие прямого отношения с списку товаров (общие стили)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&family=Yellowtail&display=swap');
+
+/**
+* ОЧЕНЬ ВАЖНОЕ ПРАВИЛО!
+*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #0096CD;
+    text-align: center;
+    margin: 15px auto;
+}
