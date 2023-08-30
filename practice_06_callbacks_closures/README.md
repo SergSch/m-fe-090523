@@ -92,6 +92,6 @@ const result = testArray.filter( twoFilters(isOdd, divThree) );
 9. Задача "с двумя звездочками". Модифицируйте решение предыдущей задачи для произвольного числа функций-фильтров.
 
 ### Полезные ссылки
-- (Русскоязычный гайд)[https://learn.javascript.ru/closure] по замыканиям
-- (Еще русскоязычный гайд)[https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D0%BC-%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-javascript-%D1%80%D0%B0%D0%B7-%D0%B8-%D0%BD%D0%B0%D0%B2%D1%81%D0%B5%D0%B3%D0%B4%D0%B0-c211805b6898] тоже хорош, но лучше читать после первого.
+- [Русскоязычный гайд](https://learn.javascript.ru/closure) по замыканиям
+- [Еще русскоязычный гайд](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D0%BC-%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-javascript-%D1%80%D0%B0%D0%B7-%D0%B8-%D0%BD%D0%B0%D0%B2%D1%81%D0%B5%D0%B3%D0%B4%D0%B0-c211805b6898) тоже хорош, но лучше читать после первого.
 - [Closures](https://www.freecodecamp.org/news/lets-learn-javascript-closures-66feb44f6a44/) - тоже заслуживающий внимания, но увы, англоязычный. Зато с картинками.
