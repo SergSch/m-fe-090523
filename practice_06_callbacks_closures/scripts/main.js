@@ -105,4 +105,6 @@ function multiplyArray (srcArray) {
 }
 
 let m = multiplyArray( [1, 2, 3] );
-console.log(m(2)); // [2, 4, 6]
+
+
+console.log( m(2) ); // [2, 4, 6]

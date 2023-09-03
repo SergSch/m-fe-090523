@@ -1,0 +1,39 @@
+/*
+* Здесь содержатся стили, не имеющие прямого отношения с списку товаров (общие стили)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&family=Yellowtail&display=swap');
+
+/**
+* ОЧЕНЬ ВАЖНОЕ ПРАВИЛО!
+*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+h1 {
+    color: #0096CD;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.custom_ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 10px;
+}
+
+.custom_ul > li {
+    padding: 5px;
+    margin-bottom: 5px;
+    color: #0096CD;
+    border-radius: 5px;
+    border: 1px solid gray;
+    box-shadow: 5px 5px 15px lightgray;
+}
