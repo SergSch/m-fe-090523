@@ -97,14 +97,32 @@ m(2); // [2, 4, 6]
 ```
 */
 
-function multiplyArray (srcArray) {
-    return function(multiplier){
-        return srcArray.map(i => i * multiplier);
+// function multiplyArray (srcArray) {
+//     return function(multiplier){
+//         return srcArray.map(i => i * multiplier);
 
-    }
+//     }
+// }
+
+// let m = multiplyArray( [1, 2, 3] );
+
+
+// console.log( m(2) ); // [2, 4, 6]
+
+// Task 9
+function multipleFilters( ...args ) {
+  return function(element) {
+    let result = true;
+    args.forEach( filterFunction => {
+      result = result && filterFunction(element);
+    });
+    return result;
+  }
 }
 
-let m = multiplyArray( [1, 2, 3] );
+const isOdd = (x) => x % 2 === 0; // функция проверки числа на четность
+const divThree = (x) => x % 3 === 0; // функция проверки числа на кратность 3
 
-
-console.log( m(2) ); // [2, 4, 6]
+const testArray = [1,2,3,4,5,6,7,8,9];
+const result = testArray.filter( multipleFilters(isOdd, divThree) );
+console.log(result);
