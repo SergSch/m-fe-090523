@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_09</title>
+
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/common.css">
+</head>
+
+<body>
+    <h1>Практическое занятие №10</h1>
+    <div class="card">
+        <h3>Тема занятия</h3>
+        <p>Работа с localStorage</p>
+    </div>
+
+    <div class="root">
+        <div class="container firstBlock">
+            <h3>Это блок для пристрелочных задач</h3>
+            <p>На эту кнопку предстоит добавить обработчик клика, который будет сохранять в LS объект testObject</p>
+            <button class="button" id="saveTestObjectBtn">Сохранить в LS</button>
+        </div>
+        <div class="container" id="inputsBlock">
+            <h3>Это блок с инпутами для третьей задачи</h3>
+            <p>В этом блоке содержится несколько инпутов. Нам требуется добавить на кнопки внизу обработчики. При нажатии на кнопку "Сохранить", нужно создавать объект с данными инпутов, а при нажатии на "Очистить" - очищать этот объект. При нажатии на кнопку "Восстановить", нужно заполнять инпуты данными из LS</p>
+            <input id="firstInput" class="input" placeholder="First input"/>
+            <input id="secondInput" class="input" placeholder="Second input"/>
+            <input id="thirdInput" class="input" placeholder="Third input"/>
+            <div class="buttonsBlockForInputs">
+                <button class="button" id="saveInputsDataButton">Сохранить</button>
+                <button class="button" id="clearInputsDataButton">Очистить</button>
+                <button class="button" id="restoreInputsDataButton">Восстановить</button>
+            </div>
+        </div>
+        <div class="container" id="productsBlock">
+            <h3>Это блок для работы со списком товаров</h3>
+            <div class="productsContainer"></div>
+        </div>
+    </div>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
