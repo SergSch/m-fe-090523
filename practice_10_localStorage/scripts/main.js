@@ -119,3 +119,69 @@ const ball = {
 
   // Массив объектов
   let products = [ball, gloves, shoes, hammer, saw, shark];
+
+  const container = document.querySelector('.productsContainer');
+
+  let basket = localStorage.getItem('basketInstance') ? JSON.parse(localStorage.getItem('basketInstance')) : {};
+
+  const renderProducts = (products) => {
+    products.forEach( product => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('productCard');
+        const productHeader = document.createElement('h3');
+        productHeader.textContent = product.name;
+        const productPrice = document.createElement('p');
+        productPrice.textContent = product.price;
+        const productCategory = document.createElement('p');
+        productCategory.textContent = product.category;
+        const productImg = document.createElement('img');
+        productImg.classList.add('productImg');
+        productImg.src = product.img;
+        const addToCartButton = document.createElement('button');
+        addToCartButton.textContent = 'Add'
+        addToCartButton.addEventListener('click', () => {
+          if (basket[product.id]) {
+            basket[product.id]++;
+          }
+          else {
+            basket[product.id] = 1;
+          }
+          localStorage.setItem('basketInstance', JSON.stringify(basket))
+        });
+        const removeFromCartButton = document.createElement('button');
+        removeFromCartButton.textContent = 'Remove'
+        removeFromCartButton.addEventListener('click', () => {
+          if (basket[product.id] > 1) {
+            basket[product.id] -= 1;
+          } else {
+              delete basket[product.id];
+          }
+          localStorage.setItem('basketInstance', JSON.stringify(basket))
+        });
+        productCard.append(productImg, productHeader, productPrice, productCategory, addToCartButton, removeFromCartButton);
+        container.append(productCard);
+
+    });
+  }
+
+  renderProducts(products);
+
+const showBasketBtn = document.createElement("button");
+showBasketBtn.textContent = "Показать корзину";
+showBasketBtn.classList.add("button");
+
+const clearBasketBtn = document.createElement("button");
+clearBasketBtn.textContent = "Очистить корзину";
+clearBasketBtn.classList.add("button");
+
+showBasketBtn.addEventListener("click", () => {
+    const deserializedData = JSON.parse(localStorage.getItem("basketInstance"));
+    console.log(basket, deserializedData);
+});
+
+clearBasketBtn.addEventListener("click", () => {
+    localStorage.removeItem("basketInstance");
+    basket = {};
+});
+
+container.after(showBasketBtn, clearBasketBtn)
