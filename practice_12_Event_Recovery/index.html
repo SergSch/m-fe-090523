@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_12</title>
+
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/common.css">
+</head>
+
+<body>
+    <h1>Практическое занятие №12</h1>
+    <div class="card">
+        <h3>Тема занятия</h3>
+        <p>Работа с объектом Event</p>
+    </div>
+
+    <div class="root">
+        <div class="container" id="testInputsBlock">
+            <p>В этом блоке есть инпуты, в которых предполагается добавлять валидацию.</p>
+            <input id="nameInput" class="input" placeholder="Name" />
+        </div>
+        <div class="container" id="bubblingBlock">
+            <button class="button" id="firstButton">First button</button>
+            <button class="button" id="secondButton">Second button</button>
+            <button class="button" id="thirdButton">Third button</button>
+        </div>
+        <div class="container" id="testInputsBlock">
+            <p>В этом блоке есть ссылка, которую нам нужно запретить.</p>
+            <a href="https://www.google.com">Собственно ссылка</a>
+        </div>
+        <form action="/" class="container tooltiped" id="inputsTestForm">
+            <input class="input" name="firstFormInput" id="firstFormInput" placeholder="First input" />
+            <input class="input" name="secondFormInput" id="secondFormInput" placeholder="Second input" />
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="./scripts/main.js"></script>
+</body>
+</html>

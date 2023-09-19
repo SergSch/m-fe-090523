@@ -1,0 +1,1 @@
+const tooltip = document.querySelector('.tooltip');

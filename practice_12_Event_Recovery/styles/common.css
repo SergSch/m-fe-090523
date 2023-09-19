@@ -1,0 +1,119 @@
+/*
+* Здесь содержатся стили, не имеющие прямого отношения с списку товаров (общие стили)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&family=Yellowtail&display=swap');
+
+/**
+* ОЧЕНЬ ВАЖНОЕ ПРАВИЛО!
+*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+h1 {
+    color: #0096CD;
+    text-align: center;
+    margin: 15px auto;
+}
+
+h3 {
+    color: #0096CD;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.container {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.firstBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.input {
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 2px solid lightblue;
+    width: 100%;
+    transition: all .5s;
+}
+
+.input:focus {
+    outline: none;
+    border-bottom-color: #0096CD;
+}
+
+.button {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #0096CD;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.button-cancel {
+    background-color: darkgray;
+}
+
+.button:hover {
+    box-shadow: 5px 5px 15px lightblue;
+}
+
+.buttonsBlockForInputs {
+    padding: 10px 0;
+}
+
+.productCard {
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 15px lightblue;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.productsContainer {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.productImg {
+    max-width: 100%;
+}
+
+.addToCartBtn {
+    background-color: rgb(10, 135, 8);
+}
+
+.removeFromCartBtn {
+    background-color: rgb(169, 26, 10);
+}
+
+.errorInput {
+    border-color: red;
+    background-color: lightcoral;
+}
