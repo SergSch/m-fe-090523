@@ -20,9 +20,20 @@
     <div class="root" id="root">
         <div class="loader">Please, wait!</div>
         <select id="categoriesSelect"></select>
-        <div id="productsContainer"></div>
+        <button id="addProductBtn">Add Product</button>
+        <div id="productsContainer" class="productsContainer"></div>
     </div>
 
+    <div class="modalContainer" id="modalContainer">
+        <div id="productFormContainer" class="productFormContainer">
+            <div class="productForm">
+                <input name="title" placeholder="Product name"/>
+                <input name="price" placeholder="Product price"/>
+                <input name="description" placeholder="Product description"/>
+                <button id="sendProductForm">Send product data</button>
+            </div>
+        </div>
+    </div>
     <script src="./scripts/main.js"></script>
 </body>
 </html>
