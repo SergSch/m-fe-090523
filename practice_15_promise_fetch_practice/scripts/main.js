@@ -66,15 +66,6 @@ const init = () => {
     loader.style.display = 'block';
     const categoriesPromise = requestCategories();
     const productsPromise = requestProducts();
-    Promise.all([categoriesPromise, productsPromise])
-        .then( (results) => {
-            return Promise.all([results[0].json(), results[1].json()]);
-        })
-        .then( results => {
-            renderCategories(results[0]);
-            renderProducts(results[1]);
-            loader.style.display = 'none';
-        });
 
     categoriesSelect.addEventListener('change', (event) => {
         loader.style.display = 'block';
