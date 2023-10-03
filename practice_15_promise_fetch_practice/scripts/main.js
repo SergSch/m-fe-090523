@@ -67,6 +67,24 @@ const init = () => {
     const categoriesPromise = requestCategories();
     const productsPromise = requestProducts();
 
+    Promise.all( [categoriesPromise, productsPromise] )
+        .then( result => {
+            return Promise.all( [result[0].json(), result[1].json()] )
+        })
+        .then( dataResults => {
+            renderCategories(dataResults[0]);
+            renderProducts(dataResults[1]);
+            loader.style.display = 'none';
+        });
+
+    // categoriesPromise
+    //     .then( resp => resp.json())
+    //     .then( data => renderCategories(data));
+
+    // productsPromise
+    //     .then( resp => resp.json())
+    //     .then( data => renderProducts(data));
+
     categoriesSelect.addEventListener('change', (event) => {
         loader.style.display = 'block';
         requestProducts(event.target.value)
@@ -94,10 +112,16 @@ const task2Demo = () => {
             resolve(7)
         }, 3000);
     });
+
+    Promise.all( [firstPromise, secondPromise] )
+        .then( result => {
+            console.log('All promises resolved!', result)
+            console.log( result[0] + result[1]);
+        });
     // Нужно получить сумму того, чем зарезолвлены наши промисы
 }
 
-// task2Demo();
+ task2Demo();
 
 // Для задачи №4
 const task4Demo = () => {
@@ -120,6 +144,23 @@ const task4Demo = () => {
             }
         }, 3000);
     });
+
+    Promise.all( [firstPromise, secondPromise] )
+        .then( results => {
+            console.log('All success!', results[0] + results[1]);
+        })
+        .catch( error => {
+            console.log('Something went wrong', error);
+        })
+        .finally( () => {
+            console.log('All promises finished!');
+        });
+    /*
+    Нужно построить такую логику, чтобы:
+ - при успешном завершении обоих промисов, в консоли выводилась сумма результатов (как в предыдущей задаче)
+ - в случае ошибки, в консоль выводилось "something went wrong!", и причина ошибки (то, что передается в `reject`)
+ - вне зависимости от результата, чтобы в консоль выводилось "All promises are finished now!".
+ */
 }
 
 // task4Demo();
@@ -137,3 +178,45 @@ productModal.addEventListener('click', (event) => {
         productModal.style.display = 'none';
     }
 })
+
+/*
+Пишем функцию добавления нового товара `addProduct`. В аргументах она принимает:
+ - title - название нового товара
+ - price - цена
+ - description - описание
+ - category - категория товара
+
+Она должна обратиться POST-запросом к адресу `https://fakestoreapi.com/products`, и в теле запроса передать такой объект:
+
+```
+{
+    title: 'test product',
+    price: 13.5,
+    description: 'lorem ipsum set',
+    image: 'https://i.pravatar.cc',
+    category: 'electronic'
+}
+```
+Объект нужно преобразовать в строку (`JSON.stringify`).
+*/
+
+const addProduct = (title, price, description, category) => {
+    const reqData = {
+        title: title,
+        price: price,
+        description: description,
+        category: category,
+        image: 'https://i.pravatar.cc'
+    };
+    fetch('https://fakestoreapi.com/products', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify(reqData)
+    })
+        .then( resp => resp.json())
+        .then( data => console.log(data));
+}
+
+addProduct('title', 12, 'descrp', 'cat')
