@@ -1,0 +1,39 @@
+.productCard {
+  border: 1px solid blue;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 15px lightblue;
+}
+
+.productsContainer {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Название товара */
+.productName {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0096CD;
+}
+
+/* Цена товара */
+.productPrice {
+  font-size: 16px;
+  font-weight: 700;
+  color: darkgreen;
+}
+
+.productStrength {
+  font-weight: 700;
+  color: darkblue;
+  font-style: italic;
+}
+
+.productPower {
+  font-weight: 700;
+  color: red;
+  text-decoration: dashed;
+}
