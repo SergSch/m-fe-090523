@@ -23,6 +23,14 @@ class Tool extends Product {
   }
 }
 
+function customMap(callback) {
+  let result = [];
+  for (let i = 0; i < this.length; i++) {
+      result[i] = callback(this[i]);
+  }
+  return result;
+}
+
 const weirdArray = {
   length: 2,
   0: 'Saw',
