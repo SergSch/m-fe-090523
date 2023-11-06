@@ -1,24 +1,36 @@
-// код пишем здесь!
-
-function ProductFunction(id, name, price, description) {
-  this.id = id;
-  this.name = name;
-  this.price = price;
-  this.description = description;
-}
-
-class ProductClass {
+class Product {
 
   constructor(id, name, price, description) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.description = description;
+      this.id = id;
+      this.name = name;
+      this.price = price;
+      this.description = description;
   }
 }
 
-const independentObject = {
-  property: 'value'
+class PowerTool extends Product {
+  constructor(id, name, price, description, power, warranty) {
+      super(id, name, price, description);
+      this.power = power;
+      this.warranty = warranty;
+  }
 }
 
-const productInstance = new ProductClass(1,'Name', 2, 'Description');
+class Tool extends Product {
+  constructor(id, name, price, description, strength) {
+      super(id, name, price, description);
+      this.strength = strength;
+  }
+}
+
+const weirdArray = {
+  length: 2,
+  0: 'Saw',
+  1: 'Hammer'
+}
+
+const veryWeirdArray = {
+  0: 'Drill',
+  1: 'Axe',
+  2: 'Nails',
+};
