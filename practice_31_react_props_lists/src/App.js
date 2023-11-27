@@ -6,13 +6,6 @@ import SimpleInput from './components/input/SimpleInput';
 
 
 function App() {
-
-
-  const paragraphStyles = {
-    textColor: 'red',
-    fontSize: '18px'
-  }
-
   const paragraphClickHandler = () => {
     console.log('Handler on paragraph')
   }
@@ -22,7 +15,6 @@ function App() {
       <p>Hello World from React! {new Date().toLocaleString()} </p>
       <SimpleParagraph
         text="Paragraph text!"
-        styles={ paragraphStyles }
         onClick={ paragraphClickHandler }
       />
       <SimpleInput disabled={true} size="small" />
