@@ -11,12 +11,15 @@ function App() {
 
   // local state UserName
   const [userName, setUserName] = useState('');
+  const [greet, setGreet] = useState(false);
+
   return (
     <div className="App">
       <p>Hello World from React! {new Date().toLocaleString()} </p>
 
       <LoginForm successLoginHandler={setUserName}/>
-      <Greeting name={userName}/>
+      <button onClick={ () => {setGreet(old => !old);} }>Toggle Greeting visibility</button>
+      { greet && <Greeting name={userName} /> }
     </div>
   );
 }

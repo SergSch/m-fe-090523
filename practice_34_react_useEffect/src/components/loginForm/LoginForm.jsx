@@ -21,14 +21,16 @@ export default function LoginForm( props ) {
         login: login,
         pwd: passwd
       };
+
+      /* for demo only! */
+      /*
       const newArray = attempts;
       newArray.push(attemptData)
 
       setAttempts(newArray);
-      //setAttempts( [...attempts, attemptData] );
-
-      // props.successLoginHandler(login);
-      // console.log('Form state: ', login, passwd);
+      */
+      setAttempts( [...attempts, attemptData] );
+      props.successLoginHandler(login);
     }
   }
 
@@ -53,7 +55,6 @@ export default function LoginForm( props ) {
 
       {
         attempts.map( attempt => {
-          console.log('attempt render', attempt);
           return <p key={attempt.id}>{attempt.login + " " + attempt.pwd}</p>
         })
       }
