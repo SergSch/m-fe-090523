@@ -1,0 +1,32 @@
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid lightgray;
+  box-shadow: 5px 5px 15px lightblue;
+}
+
+.errorInput {
+  border-color: red;
+  background-color: #f7867e;
+}
+
+.smallInput {
+  width: 25%;
+}
+
+.mediumInput {
+  width: 50%;
+}
+
+.largeInput {
+  width: 100%;
+}
+
+.lightInput {
+  background-color: antiquewhite;
+}
+
+.darkInput {
+  background-color: darkblue;
+  color: white;
+}
